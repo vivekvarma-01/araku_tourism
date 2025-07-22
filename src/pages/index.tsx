@@ -4,8 +4,9 @@ import { AnimatedTestimonialsDemo } from "../components/animated-testimonials-de
 import InfiniteMovingCardsDemo from "@/components/infinite-moving-cards-demo";
 import Footer from "@/components/footer";
 import AccordionLast from "@/components/ui/accordion-last";
-import AnimatedPinDemo from "@/components/ui/AnimatedPinDemo";
-import CombinedSection from "@/components/conbined-section";
+import AnimatedPinDemo from "@/components/AnimatedPinDemo";
+import SimplePricing from "@/components/pricing";
+
 
 
 export default function Home() {
@@ -15,10 +16,11 @@ export default function Home() {
       <AnimatedTestimonialsDemo />
       <InfiniteMovingCardsDemo />
       <TourPlans />
-      <Footer />
+      <SimplePricing />
       <AnimatedPinDemo />
       <AccordionLast />
-      <CombinedSection />
+      <Footer />
+  
     </div>
   );
 }

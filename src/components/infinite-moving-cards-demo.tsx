@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
@@ -8,14 +8,15 @@ export default function InfiniteMovingCardsDemo() {
     <div className="h-[40rem] rounded-md flex flex-col antialiased bg-black dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
 
       {/* Heading above the testimonials */}
-      <h2 className="text-3xl font-bold text-center mb-6 text-white-900 dark:text-white">
-        What Our Travelers Say
-      </h2>
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="right"
-        speed="normal"
-      />
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-gradient-to-b from-foreground to-foreground/30 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl m-4"
+              >
+              What Our Travelers Say
+            </motion.h1>
+         <InfiniteMovingCards items={testimonials} direction="right" speed="normal" />
     </div>
   );
 }

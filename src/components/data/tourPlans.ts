@@ -3,13 +3,11 @@ export interface TourPlan {
   title: string
   duration: string
   price: string
-  originalPrice: string
-  rating: number
-  reviews: number
-  image: string
+  originalPrice?: string
+  image?: string
   highlights: string[]
   inclusions: string[]
-  popular: boolean
+  popular?: boolean
 }
 
 export const tourPlans: TourPlan[] = [
@@ -19,8 +17,6 @@ export const tourPlans: TourPlan[] = [
     duration: "1 Day",
     price: "₹2,999",
     originalPrice: "₹3,499",
-    rating: 4.8,
-    reviews: 156,
     image: "https://i.pinimg.com/1200x/df/b0/e6/dfb0e669d0ae8f8d437387d6e98f66e3.jpg",
     highlights: [
       "Borra Caves exploration",
@@ -38,8 +34,6 @@ export const tourPlans: TourPlan[] = [
     duration: "2 Days / 1 Night",
     price: "₹5,999",
     originalPrice: "₹7,499",
-    rating: 4.9,
-    reviews: 243,
     image: "https://i.pinimg.com/736x/d9/41/ab/d941abb5519fbbec5bc2502387f9de56.jpg",
     highlights: [
       "Borra Caves & Katiki Waterfalls",
@@ -63,8 +57,6 @@ export const tourPlans: TourPlan[] = [
     duration: "3 Days / 2 Nights",
     price: "₹8,999",
     originalPrice: "₹11,499",
-    rating: 4.9,
-    reviews: 189,
     image: "https://i.pinimg.com/1200x/48/39/d3/4839d3fea4f77f32fc3771bd1c6bf948.jpg",
     highlights: [
       "Extended tribal village stay",
@@ -88,8 +80,6 @@ export const tourPlans: TourPlan[] = [
     duration: "4 Days / 3 Nights",
     price: "₹12,999",
     originalPrice: "₹16,499",
-    rating: 5.0,
-    reviews: 98,
     image: "https://i.pinimg.com/736x/5d/8e/0f/5d8e0f643e5714d12d2c03698f1aa20f.jpg",
     highlights: [
       "Train journey experience",
