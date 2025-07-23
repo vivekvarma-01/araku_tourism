@@ -1,6 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 export default function InfiniteMovingCardsDemo() {

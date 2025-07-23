@@ -16,7 +16,7 @@ export function AnimatedPinDemo() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute z-0 w-[23rem] h-[23rem] rounded-3xl bg-green-400 blur-3xl opacity-50"
+        className="absolute z-0 w-[23rem] h-[23rem] rounded-3xl bg-blue-900 blur-3xl opacity-50"
       />
 
       {/* Main content with PinContainer */}

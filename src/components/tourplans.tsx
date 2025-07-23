@@ -21,7 +21,7 @@ function cn(...classes: (string | undefined | null | false)[]): string {
 }
 
 // Component to render individual tour card
-function TourCard({ plan, index }: { plan: TourPlan ; index: number }) {
+function TourCard({ plan, index }: { plan: TourPlan; index: number }) {
   return (
     <motion.div
       key={plan.id}
@@ -29,7 +29,7 @@ function TourCard({ plan, index }: { plan: TourPlan ; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
       whileHover={{ y: -5 }}
-      className="flex w-full sm:w-[48%] lg:w-[32%] 2xl:w-[30%] min-w-[300px] max-w-[400px]"
+      className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] max-w-[300px] min-w-[240px]"
     >
       <Card
         className={cn(
@@ -39,15 +39,16 @@ function TourCard({ plan, index }: { plan: TourPlan ; index: number }) {
         )}
       >
         {plan.popular && (
-          <div className="absolute top-4 right-4 z-10">
-            <Badge className="bg-green-600 hover:bg-green-700 shadow-md">
+          <div className="absolute top-2 right-2 z-10">
+            <Badge className="bg-green-600 hover:bg-green-700 shadow-md text-xs px-2 py-1">
               <Star className="w-3 h-3 mr-1" />
-              Most Popular
+              Popular
             </Badge>
           </div>
         )}
 
-        <div className="relative h-48 overflow-hidden">
+        {/* Smaller image for 4-card layout */}
+        <div className="relative h-32 overflow-hidden">
           <Image
             src={plan.image || "/placeholder.svg"}
             alt={plan.title}
@@ -56,76 +57,75 @@ function TourCard({ plan, index }: { plan: TourPlan ; index: number }) {
           />
         </div>
 
-        <CardHeader className="pb-4 space-y-3">
+        <CardHeader className="pb-2 space-y-2 p-3">
           <div className="flex items-center justify-between">
-            <Badge variant="secondary" className="text-xs bg-secondary/50">
+            <Badge variant="secondary" className="text-xs bg-secondary/50 px-2 py-0.5">
               <Clock className="w-3 h-3 mr-1" />
               {plan.duration}
             </Badge>
           </div>
 
-          <CardTitle className="text-xl font-bold leading-tight text-green-700">
+          <CardTitle className="text-base font-bold leading-tight text-green-700 line-clamp-2">
             {plan.title}
           </CardTitle>
 
           <div className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-green-600">
+            <span className="text-lg font-bold text-green-600">
               {plan.price}
             </span>
-            <span className="text-sm text-muted-foreground line-through">
+            <span className="text-xs text-muted-foreground line-through">
               {plan.originalPrice}
             </span>
           </div>
         </CardHeader>
 
-        <CardContent className="space-y-4 pb-6">
+        <CardContent className="space-y-2 pb-3 px-3">
           <div>
-            <h4 className="font-semibold mb-3 text-sm text-foreground">Highlights:</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold mb-1.5 text-xs text-foreground">Highlights:</h4>
+            <ul className="space-y-1">
               {Array.isArray(plan.highlights) &&
-                plan.highlights.slice(0, 3).map((highlight: string, highlightIndex: number) => (
+                plan.highlights.slice(0, 2).map((highlight: string, highlightIndex: number) => (
                   <motion.li
                     key={highlightIndex}
                     initial={{ opacity: 0, x: -5 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.5 + highlightIndex * 0.05 }}
-                    className="text-sm flex items-start"
+                    className="text-xs flex items-start"
                   >
-                    <div className="flex h-4 w-4 items-center justify-center rounded-full mt-0.5 mr-2 flex-shrink-0 bg-green-500/10 text-green-600">
-                      <Check className="h-2.5 w-2.5" />
+                    <div className="flex h-3 w-3 items-center justify-center rounded-full mt-0.5 mr-1.5 flex-shrink-0 bg-green-500/10 text-green-600">
+                      <Check className="h-1.5 w-1.5" />
                     </div>
-                    <span className="text-foreground">{highlight}</span>
+                    <span className="text-foreground leading-tight">{highlight}</span>
                   </motion.li>
                 ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-3 text-sm text-foreground">Includes:</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold mb-1.5 text-xs text-foreground">Includes:</h4>
+            <ul className="space-y-1">
               {Array.isArray(plan.inclusions) &&
-                plan.inclusions.slice(0, 3).map((inclusion: string, inclusionIndex: number) => (
+                plan.inclusions.slice(0, 2).map((inclusion: string, inclusionIndex: number) => (
                   <motion.li
                     key={inclusionIndex}
                     initial={{ opacity: 0, x: -5 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.7 + inclusionIndex * 0.05 }}
-                    className="text-sm flex items-start"
+                    className="text-xs flex items-start"
                   >
-                    <div className="flex h-4 w-4 items-center justify-center rounded-full mt-0.5 mr-2 flex-shrink-0 bg-green-500/10 text-green-600">
-                      <Check className="h-2.5 w-2.5" />
+                    <div className="flex h-3 w-3 items-center justify-center rounded-full mt-0.5 mr-1.5 flex-shrink-0 bg-green-500/10 text-green-600">
+                      <Check className="h-1.5 w-1.5" />
                     </div>
-                    <span className="text-foreground">{inclusion}</span>
+                    <span className="text-foreground leading-tight">{inclusion}</span>
                   </motion.li>
                 ))}
             </ul>
           </div>
         </CardContent>
 
-
-        <CardFooter className="pt-0 mt-auto">
-          <Button className="w-full bg-green-600 hover:bg-green-700 hover:shadow-md hover:shadow-green-600/20 transition-all duration-300 group">
-            Book This Package
+        <CardFooter className="pt-0 mt-auto p-3">
+          <Button className="w-full bg-green-600 hover:bg-green-700 hover:shadow-md hover:shadow-green-600/20 transition-all duration-300 group text-xs py-1.5">
+            Book Package
           </Button>
         </CardFooter>
 
@@ -154,13 +154,13 @@ export default function TourPlans() {
       </div>
 
       <section id="packages" className="relative">
-        <div className="container px-4 mx-auto">
-          <div className="flex flex-col items-center space-y-2 mb-16">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="flex flex-col items-center space-y-2 mb-12">
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-b from-foreground to-foreground/30 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
+              className="bg-gradient-to-b from-foreground to-foreground/30 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl lg:text-5xl"
             >
               Choose the Perfect Plan for Your Araku Adventure
             </motion.h1>
@@ -168,15 +168,15 @@ export default function TourPlans() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="max-w-md pt-2 text-lg text-muted-foreground"
+              className="max-w-2xl pt-2 text-base text-muted-foreground"
             >
-              Flexible and transparent pricing options — whether you're
+              Flexible and transparent pricing options — whether you&rsquo;re
               planning a quick getaway or a luxury experience.
             </motion.p>
           </div>
 
-          {/* Responsive card layout */}
-          <div className="mt-8 flex flex-wrap justify-center gap-6 sm:gap-8 px-2 sm:px-4">
+          {/* Updated responsive card layout - 4 cards per row on large screens */}
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
             {tourPlans.map((plan, index) => (
               <TourCard key={plan.id} plan={plan} index={index} />
             ))}
