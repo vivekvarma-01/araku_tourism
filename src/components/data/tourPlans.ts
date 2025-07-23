@@ -72,7 +72,7 @@ export const tourPlans: TourPlan[] = [
       "Cultural workshops",
       "Professional photography",
     ],
-    popular: false,
+    popular: true,
   },
   {
     id: 4,
