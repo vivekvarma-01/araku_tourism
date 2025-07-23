@@ -20,16 +20,48 @@ function cn(...classes: (string | undefined | null | false)[]): string {
   return classes.filter(Boolean).join(" ");
 }
 
-// Component to render individual tour card
-function TourCard({ plan, index }: { plan: TourPlan; index: number }) {
+// TourCard now gets info about highlighting and blurring
+function TourCard({
+  plan,
+  index,
+  isActive,
+  isInactive,
+  onHover,
+  onLeave,
+}: {
+  plan: TourPlan;
+  index: number;
+  isActive: boolean;
+  isInactive: boolean;
+  onHover: () => void;
+  onLeave: () => void;
+}) {
   return (
     <motion.div
-      key={plan.id}
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
+      tabIndex={0}
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-      whileHover={{ y: -5 }}
-      className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] max-w-[300px] min-w-[240px]"
+      animate={{
+        opacity: 1,
+        y: 0,
+        scale: isActive ? 1.05 : 1,
+        zIndex: isActive ? 10 : 1,
+      }}
+      transition={{
+        duration: 0.4,
+        delay: 0.07 + index * 0.07,
+        type: "spring",
+      }}
+      className={cn(
+        "relative w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] max-w-[300px] min-w-[240px] transition-all duration-300",
+        isActive && "shadow-xl ring-2 ring-green-600/25 scale-105",
+        isInactive && "blur-[2.5px] brightness-90 pointer-events-none"
+      )}
+      style={{
+        filter: isInactive ? "blur(2.5px) brightness(90%)" : "none",
+        transition: "filter 0.35s, transform 0.35s, box-shadow 0.25s"
+      }}
     >
       <Card
         className={cn(
@@ -128,7 +160,6 @@ function TourCard({ plan, index }: { plan: TourPlan; index: number }) {
             Book Package
           </Button>
         </CardFooter>
-
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-1/2 rounded-b-lg bg-gradient-to-t from-green-500/[0.05] to-transparent" />
         <div className="pointer-events-none absolute inset-0 rounded-lg border-2 border-green-500/30" />
       </Card>
@@ -138,6 +169,7 @@ function TourCard({ plan, index }: { plan: TourPlan; index: number }) {
 
 export default function TourPlans() {
   const [mounted, setMounted] = useState(false);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -174,11 +206,17 @@ export default function TourPlans() {
               planning a quick getaway or a luxury experience.
             </motion.p>
           </div>
-
-          {/* Updated responsive card layout - 4 cards per row on large screens */}
           <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
             {tourPlans.map((plan, index) => (
-              <TourCard key={plan.id} plan={plan} index={index} />
+              <TourCard
+                key={plan.id}
+                plan={plan}
+                index={index}
+                isActive={hoveredIdx === index}
+                isInactive={hoveredIdx !== null && hoveredIdx !== index}
+                onHover={() => setHoveredIdx(index)}
+                onLeave={() => setHoveredIdx(null)}
+              />
             ))}
           </div>
         </div>
