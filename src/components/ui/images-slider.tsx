@@ -140,7 +140,7 @@ export const ImagesSlider = ({
             initial="initial"
             animate="visible"
             exit={direction === "up" ? "upExit" : "downExit"}
-           //@ts-expect-error
+           //@ts-expect-error : unknown error
             variants={slideVariants}
             className="image h-full w-full absolute inset-0 object-cover object-center"
           />
