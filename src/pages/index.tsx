@@ -2,10 +2,10 @@
 import TourPlans from "@/components/tourplans";
 import { AnimatedTestimonialsDemo } from "../components/animated-testimonials-demo";
 import InfiniteMovingCardsDemo from "@/components/infinite-moving-cards-demo";
-import Footer from "@/components/footer";
 import AccordionLast from "@/components/ui/accordion-last";
 import AnimatedPinDemo from "@/components/AnimatedPinDemo";
 import { ImagesSliderDemo } from "@/components/landingpage";
+import Footer4Col from "@/components/footer2";
 
 
 
@@ -18,7 +18,7 @@ export default function Home() {
       <TourPlans />
       <AnimatedPinDemo />
       <AccordionLast />
-      <Footer />
+      <Footer4Col />
   
     </div>
   );
