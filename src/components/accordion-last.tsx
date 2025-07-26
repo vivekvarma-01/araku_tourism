@@ -17,6 +17,7 @@ interface AccordionItemProps {
 }
 
 const accordionData: AccordionItem[] = [
+  // ... (unchanged)
   {
     question: 'What is the best time to visit Araku Valley?',
     answer:
@@ -46,11 +47,11 @@ const accordionData: AccordionItem[] = [
 
 const AccordionIcon: React.FC<AccordionIconProps> = ({ isOpen }) => (
   <svg
-    className={`w-6 h-6 text-zinc-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+    className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-180 text-green-600 dark:text-green-400' : 'text-zinc-400'}`}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
   >
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
   </svg>
@@ -58,17 +59,22 @@ const AccordionIcon: React.FC<AccordionIconProps> = ({ isOpen }) => (
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ item, isOpen, onClick }) => {
   return (
-    <div className="border-b border-zinc-700 last:border-b-0">
+    <div className="border-b border-green-200 dark:border-zinc-700 last:border-b-0">
       <button
-        className="w-full flex justify-between items-center text-left py-4 px-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 hover:bg-zinc-800 transition-colors duration-200"
+        className="
+          w-full flex justify-between items-center text-left py-4 px-5
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-green-300
+          hover:bg-green-50 dark:hover:bg-zinc-800
+          transition-colors duration-200
+        "
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-semibold text-white">{item.question}</span>
+        <span className="text-lg font-semibold text-black dark:text-white">{item.question}</span>
         <AccordionIcon isOpen={isOpen} />
       </button>
       <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
-        <div className="p-5 pt-0 text-zinc-300">
+        <div className="p-5 pt-0 text-zinc-700 dark:text-zinc-300">
           <p>{item.answer}</p>
         </div>
       </div>
@@ -84,11 +90,11 @@ const AccordionLast: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center p-6 bg-zinc-950 min-h-screen">
-      <div className="w-full max-w-2xl bg-zinc-900 rounded-2xl shadow-lg border border-zinc-700 overflow-hidden">
+    <div className="flex items-center justify-center p-6 min-h-screen bg-white text-black dark:bg-zinc-950 dark:text-white transition-colors">
+      <div className="w-full max-w-2xl bg-white dark:bg-zinc-900 rounded-2xl shadow-lg border border-green-300 dark:border-zinc-700 overflow-hidden mb-0">
         <div className="p-6">
-          <h1 className="text-2xl font-bold text-center text-white mb-1">Frequently Asked Questions</h1>
-          <p className="text-center text-zinc-400 mb-6">Here are some of our most asked questions.</p>
+          <h1 className="text-2xl font-bold text-center text-green-700 dark:text-green-400 mb-1">Frequently Asked Questions</h1>
+          <p className="text-center text-zinc-600 dark:text-zinc-400 mb-6">Here are some of our most asked questions.</p>
         </div>
         {accordionData.map((item, index) => (
           <AccordionItem

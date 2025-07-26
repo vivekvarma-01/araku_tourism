@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en" suppressHydrationWarning>
       <Head />
-      <body className="antialiased">
+      <body className="antialiased ">
         <Main />
         <NextScript />
       </body>

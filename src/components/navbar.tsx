@@ -1,19 +1,25 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { ModeToggle } from "./toggle"
+import * as React from "react";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { ModeToggle } from "./ui/toggle";
 
 const navigationItems = [
   { name: "Home", href: "#home" },
   { name: "Plans", href: "#plans" },
-  { name: "About", href: "#about" }
-]
+  { name: "About", href: "#about" },
+];
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <nav
@@ -48,10 +54,10 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 className="
-                  text-white/80 dark:text-white/90 hover:text-green-400 
+                  text-black dark:text-white/90 hover:text-green-400 
                   px-3 py-2 text-base font-medium 
                   transition-all duration-150 
-                  hover:bg-white/10 active:scale-95 rounded-md
+                  hover:bg-zinc-100 dark:hover:bg-zinc-800 active:scale-95 rounded-md
                 "
               >
                 {item.name}
@@ -114,5 +120,5 @@ export function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

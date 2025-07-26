@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { cn } from "@/lib/utils"; // Ensure this utility exists
+import { cn } from "@/lib/utils"; // Make sure you have this utility
 
 type Testimonial = {
   quote: string;
@@ -31,8 +31,13 @@ export const InfiniteMovingCards: React.FC<Props> = ({
   useEffect(() => {
     if (!containerRef.current || !scrollerRef.current) return;
 
-    // Duplicate the content to enable seamless infinite scroll
+    // Remove any previous clones before duplicating
     const children = Array.from(scrollerRef.current.children);
+    // Remove previously cloned nodes if present
+    while (scrollerRef.current.children.length > items.length) {
+      scrollerRef.current.removeChild(scrollerRef.current.lastChild as Node);
+    }
+    // Duplicate the content only once
     children.forEach((child) => {
       const clone = child.cloneNode(true);
       scrollerRef.current?.appendChild(clone);
@@ -51,15 +56,16 @@ export const InfiniteMovingCards: React.FC<Props> = ({
     containerRef.current.style.setProperty("--animation-duration", duration);
 
     setStart(true);
-  }, [direction, speed]);
+  }, [direction, speed, items.length]);
 
   return (
     <div
       ref={containerRef}
       className={cn(
+        // Gradient fade on edges for smooth effect
         "scroller relative z-20 max-w-7xl overflow-hidden",
-        "mask-gradient", // mask class for gradient fade effect
-        className
+        "mask-gradient",
+        className,
       )}
     >
       <ul
@@ -73,20 +79,26 @@ export const InfiniteMovingCards: React.FC<Props> = ({
         {items.map((item, idx) => (
           <li
             key={`${item.name}-${idx}`}
-            className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-zinc-200 bg-gradient-to-b from-zinc-100 to-zinc-50 px-8 py-6 dark:border-zinc-700 dark:from-zinc-800 dark:to-zinc-900"
+            className={cn(
+              "relative w-[350px] max-w-full shrink-0 rounded-2xl border",
+              "border-zinc-200 bg-gradient-to-b from-zinc-100 to-zinc-50",
+              "dark:border-zinc-700 dark:from-zinc-800 dark:to-zinc-900",
+              "shadow-lg transition-colors duration-200",
+              "px-8 py-6 flex flex-col justify-between"
+            )}
           >
             <blockquote>
-              <span className="relative z-20 text-sm leading-relaxed font-normal text-neutral-800 dark:text-gray-100">
+              <span className="text-base leading-relaxed font-normal text-zinc-900 dark:text-zinc-100">
                 {item.quote}
               </span>
-              <div className="relative z-20 mt-6">
-                <span className="block text-sm font-medium text-neutral-500 dark:text-gray-400">
+              <footer className="mt-6">
+                <span className="block text-sm font-semibold text-green-600 dark:text-green-400">
                   {item.name}
                 </span>
-                <span className="block text-sm text-neutral-500 dark:text-gray-400">
+                <span className="block text-xs text-zinc-500 dark:text-zinc-400">
                   {item.title}
                 </span>
-              </div>
+              </footer>
             </blockquote>
           </li>
         ))}

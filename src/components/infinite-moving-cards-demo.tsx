@@ -1,25 +1,7 @@
 "use client";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import React from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-
-export default function InfiniteMovingCardsDemo() {
-  return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-white dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-
-      {/* Heading above the testimonials */}
-            <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-gradient-to-b from-foreground to-foreground/30 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl m-4"
-              >
-              What Our Travelers Say
-            </motion.h1>
-         <InfiniteMovingCards items={testimonials} direction="right" speed="normal" />
-    </div>
-  );
-}
 
 const testimonials = [
   {
@@ -84,4 +66,18 @@ const testimonials = [
   },
 ];
 
-
+export default function InfiniteMovingCardsDemo() {
+  return (
+    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-zinc-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-gradient-to-b from-zinc-800 to-zinc-500 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl m-4 dark:from-zinc-200 dark:to-zinc-500"
+      >
+        What Our Travelers Say
+      </motion.h1>
+      <InfiniteMovingCards items={testimonials} direction="right" speed="normal" />
+    </div>
+  );
+}

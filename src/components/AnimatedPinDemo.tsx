@@ -6,17 +6,19 @@ import { motion } from "framer-motion";
 
 export function AnimatedPinDemo() {
   return (
-    <div className="h-[40rem] w-full flex items-center justify-center">
+    <div className="relative h-[40rem] w-full flex items-center justify-center bg-white text-zinc-900 dark:bg-zinc-950 dark:text-white">
       {/* Animated green aura background */}
       <motion.div
-        initial={{ opacity: 0.4, scale: 0.95 }}
-        animate={{ opacity: [0.4, 0.6, 0.4], scale: [0.95, 1, 0.95] }}
+        initial={{ opacity: 0.6, scale: 0.95 }}
+        animate={{ opacity: [0.5, 0.7, 0.5], scale: [0.95, 1, 0.95] }}
         transition={{
           duration: 3,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute z-0 w-[23rem] h-[23rem] rounded-3xl bg-blue-900 blur-3xl opacity-50"
+        className="absolute z-0 w-[23rem] h-[23rem] rounded-3xl 
+          bg-green-300 dark:bg-green-900 
+          blur-3xl opacity-60"
       />
 
       {/* Main content with PinContainer */}
@@ -25,22 +27,21 @@ export function AnimatedPinDemo() {
           title="Location Pin"
           href="https://maps.app.goo.gl/SpkkgZYyoTvHAw8DA"
         >
-          <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-[20rem] h-[20rem]">
-            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
+          <div className="flex flex-col p-5 bg-white dark:bg-zinc-900 rounded-xl shadow-lg border border-green-200 dark:border-zinc-800 w-[20rem] h-[25rem]">
+            <h3 className="font-bold text-lg text-green-800 dark:text-green-300 mb-1">
               Araku
             </h3>
-            <div className="text-base !m-0 !p-0 font-normal">
-              <span className="text-slate-500">
-                Scenic Valleys, Coffee Estates, Tribal Culture.
-              </span>
+            <div className="text-base font-normal text-zinc-700 dark:text-zinc-200 mb-2">
+              Scenic Valleys, Coffee Estates, Tribal Culture, Waterfalls, Bamboo Groves, Organic Farms, Dense Forests, Local Handicrafts, Caves.
             </div>
-            <div>
+            <div className="mt-3 rounded-lg w-full h-48 relative overflow-hidden">
               <Image
                 src="/location.png"
                 alt="Map of Araku Valley"
-                width={600}
-                height={300}
-                className="rounded-lg mt-4 w-full"
+                fill
+                className="object-cover w-full h-full"
+                sizes="(max-width: 400px) 100vw, 320px"
+                priority
               />
             </div>
           </div>

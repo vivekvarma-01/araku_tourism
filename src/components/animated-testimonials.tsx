@@ -1,7 +1,7 @@
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
@@ -13,7 +13,7 @@ type Testimonial = {
 
 export const AnimatedTestimonials = ({
   testimonials,
-  autoplay = true, // Changed default to true
+  autoplay = true,
 }: {
   testimonials: Testimonial[];
   autoplay?: boolean;
@@ -24,29 +24,26 @@ export const AnimatedTestimonials = ({
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const isActive = (index: number) => {
-    return index === active;
-  };
+  const isActive = (index: number) => index === active;
 
   const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length);
   }, [testimonials.length]);
 
-  // Modified useEffect for half-second auto-rotation
   useEffect(() => {
     if (autoplay) {
-      const interval = setInterval(handleNext, 2000); // Changed from 5000 to 500 (half second)
+      const interval = setInterval(handleNext, 2000);
       return () => clearInterval(interval);
     }
   }, [autoplay, handleNext]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
+  const randomRotateY = () => Math.floor(Math.random() * 21) - 10;
 
   return (
-    <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
+    <div className="w-full bg-white dark:bg-zinc-950 transition-colors">
+    <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12 bg-white dark:bg-zinc-950 transition-colors">
       <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
+        {/* Image block */}
         <div>
           <div className="relative h-[32rem] w-full">
             <AnimatePresence>
@@ -81,19 +78,22 @@ export const AnimatedTestimonials = ({
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <Image
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    width={500}
-                    height={500}
-                    draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center"
-                  />
+                  <div className="h-full w-full rounded-3xl overflow-hidden border-4 border-green-200 dark:border-zinc-700 shadow-xl dark:shadow-zinc-950 transition-all duration-300 bg-white dark:bg-zinc-900">
+                    <Image
+                      src={testimonial.src}
+                      alt={testimonial.name}
+                      width={500}
+                      height={500}
+                      draggable={false}
+                      className="h-full w-full object-cover object-center"
+                    />
+                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>
           </div>
         </div>
+        {/* Text & Controls */}
         <div className="flex flex-col justify-between py-4">
           <motion.div
             key={active}
@@ -114,10 +114,10 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-5xl md:text-6xl font-extrabold text-white dark:text-white leading-tight">
+            <h3 className="text-4xl md:text-5xl font-extrabold text-green-700 dark:text-green-400 leading-tight drop-shadow">
               {testimonials[active].name}
             </h3>
-            <motion.p className="mt-8 text-xl md:text-2xl text-gray-500 dark:text-neutral-300">
+            <motion.p className="mt-8 text-lg md:text-2xl text-black dark:text-zinc-100">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -143,22 +143,28 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
+          {/* Buttons */}
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
               onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="group/button flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-zinc-800 border border-green-200 dark:border-zinc-700 shadow transition duration-200 hover:bg-green-50 dark:hover:bg-green-950 focus-visible:ring-2 focus-visible:ring-green-500"
+              aria-label="Previous Testimonial"
+              type="button"
             >
-              <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+              <IconArrowLeft className="h-5 w-5 text-zinc-700 dark:text-zinc-100 group-hover/button:text-green-700 dark:group-hover/button:text-green-300 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="group/button flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-zinc-800 border border-green-200 dark:border-zinc-700 shadow transition duration-200 hover:bg-green-50 dark:hover:bg-green-950 focus-visible:ring-2 focus-visible:ring-green-500"
+              aria-label="Next Testimonial"
+              type="button"
             >
-              <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+              <IconArrowRight className="h-5 w-5 text-zinc-700 dark:text-zinc-100 group-hover/button:text-green-700 dark:group-hover/button:text-green-300 transition-transform duration-300" />
             </button>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
