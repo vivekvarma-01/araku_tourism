@@ -4,7 +4,12 @@ import { motion } from "framer-motion";
 import { TourCard } from "../components/TourCard";
 import { tourPlans } from "./data/tourPlans";
 import { WhatsAppFloatButton } from "../components/WhatsAppFloatButton";
-
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/components/ui/card"; // adjust path as needed
 
 export default function TourPlans() {
   const [mounted, setMounted] = useState(false);
@@ -87,45 +92,6 @@ export default function TourPlans() {
     </div>
   );
 }
-<div className="flex justify-center mt-8">
-  <Card className="relative max-w-[330px] w-full bg-gradient-to-b from-green-200/[0.25] via-white to-white shadow-2xl rounded-xl border-0 hover:shadow-green-400/25 hover:scale-105 transition-all duration-300">
-    <div className="pointer-events-none absolute inset-0 rounded-xl border-2 border-green-500/40" />
-    <CardHeader className="pb-2 p-4">
-      <CardTitle className="text-lg font-bold leading-tight text-green-800 tracking-wide">
-        Important Notes
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="space-y-2 pb-3 px-4">
-      <ul className="list-disc pl-5 space-y-2 text-base text-green-900 font-semibold">
-        <li>Stays can be booked on request</li>
-        <li>Meals are not included</li>
-        <li>Custom tour plans can be done on request</li>
-      </ul>
-    </CardContent>
-  </Card>
-</div>
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card"; // adjust path as needed
 
-<div className="flex justify-center mt-8 group">
-  <Card className="relative max-w-[330px] w-full bg-gradient-to-b from-green-200/[0.25] via-white to-white shadow-2xl rounded-xl border-0 transition-all duration-300 hover:scale-105 hover:shadow-green-500/30 hover:shadow-2xl">
-    {/* Subtle pop/glow border overlay that intensifies on hover */}
-    <div className="pointer-events-none absolute inset-0 rounded-xl border-2 border-green-500/40 group-hover:border-green-500/70 transition-colors duration-300" />
-    <CardHeader className="pb-2 p-4">
-      <CardTitle className="text-lg font-bold leading-tight text-green-800 tracking-wide">
-        Important Notes
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="space-y-2 pb-3 px-4">
-      <ul className="list-disc pl-5 space-y-2 text-base text-green-900 font-semibold">
-        <li>Stays can be booked on request</li>
-        <li>Meals are not included</li>
-        <li>Custom tour plans can be done on request</li>
-      </ul>
-    </CardContent>
-  </Card>
-</div>
+
+

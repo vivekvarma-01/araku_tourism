@@ -83,7 +83,7 @@ export function TourCard({
         <CardContent className="space-y-2 pb-3 px-3">
           <div>
             <h4 className="font-semibold mb-1.5 text-xs text-foreground">Prices:</h4>
-            <ul className="space-y-1 text-xs">
+            <ul className="space-y-1 text-xs text-white">
               <li>🚙 4-Seater: {plan.price["4-Seater"]}</li>
               <li>🚐 8-Seater: {plan.price["8-Seater"]}</li>
             </ul>
@@ -91,7 +91,7 @@ export function TourCard({
           {plan.hasSunrise && plan.sunriseOptions &&
             <div>
               <h4 className="font-semibold mb-1.5 text-xs text-foreground">Sunrise Options (add-on):</h4>
-              <ul className="space-y-1 text-xs">
+              <ul className="space-y-1 text-xs text-white">
                 {plan.sunriseOptions.map((opt, idx) => (
                   <li key={idx}>☀ {opt.name} – {opt.price}</li>
                 ))}
@@ -100,7 +100,7 @@ export function TourCard({
           }
           <div>
             <h4 className="font-semibold mb-1.5 text-xs text-foreground">Itinerary:</h4>
-            <ul className="space-y-1 text-xs">
+            <ul className="space-y-1 text-xs text-white">
               {plan.itinerary.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
@@ -108,7 +108,7 @@ export function TourCard({
           </div>
           <div>
             <h4 className="font-semibold mb-1.5 text-xs text-foreground">Includes:</h4>
-            <ul className="space-y-1 text-xs">
+            <ul className="space-y-1 text-xs text-white">
               {plan.inclusions.map((inc, idx) => (
                 <li key={idx}>✅ {inc}</li>
               ))}
@@ -117,7 +117,7 @@ export function TourCard({
           {plan.notes && plan.notes.length > 0 && (
             <div>
               {plan.notes.map((note, idx) => (
-                <p key={idx} className="text-xs text-muted-foreground">{note}</p>
+                <p key={idx} className="text-xs text-white">{note}</p>
               ))}
             </div>
           )}
