@@ -1,6 +1,3 @@
-// components/TourCard.tsx
-"use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import {
@@ -15,12 +12,10 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { TourPlan } from "./data/tourPlans";
 
-// Utility for class names
 function cn(...classes: (string | undefined | null | false)[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-// TourCard component receives plan info and hover state
 export function TourCard({
   plan,
   index,
@@ -55,7 +50,7 @@ export function TourCard({
       }}
       className={cn(
         "relative w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] max-w-[330px] min-w-[240px] transition-all duration-300",
-        isActive && "shadow-xl ring-2 ring-green-600/25 scale-105",
+        isActive && "shadow-xl scale-105", // No green ring!
         isInactive && "blur-[2.5px] brightness-90 pointer-events-none"
       )}
       style={{
@@ -86,7 +81,6 @@ export function TourCard({
           </div>
         </CardHeader>
         <CardContent className="space-y-2 pb-3 px-3">
-          {/* Prices */}
           <div>
             <h4 className="font-semibold mb-1.5 text-xs text-foreground">Prices:</h4>
             <ul className="space-y-1 text-xs">
@@ -94,7 +88,6 @@ export function TourCard({
               <li>🚐 8-Seater: {plan.price["8-Seater"]}</li>
             </ul>
           </div>
-          {/* Sunrise Options */}
           {plan.hasSunrise && plan.sunriseOptions &&
             <div>
               <h4 className="font-semibold mb-1.5 text-xs text-foreground">Sunrise Options (add-on):</h4>
@@ -105,7 +98,6 @@ export function TourCard({
               </ul>
             </div>
           }
-          {/* Itinerary */}
           <div>
             <h4 className="font-semibold mb-1.5 text-xs text-foreground">Itinerary:</h4>
             <ul className="space-y-1 text-xs">
@@ -114,7 +106,6 @@ export function TourCard({
               ))}
             </ul>
           </div>
-          {/* Inclusions */}
           <div>
             <h4 className="font-semibold mb-1.5 text-xs text-foreground">Includes:</h4>
             <ul className="space-y-1 text-xs">
@@ -123,7 +114,6 @@ export function TourCard({
               ))}
             </ul>
           </div>
-          {/* Notes */}
           {plan.notes && plan.notes.length > 0 && (
             <div>
               {plan.notes.map((note, idx) => (
@@ -137,8 +127,6 @@ export function TourCard({
             Book Package
           </Button>
         </CardFooter>
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-1/2 rounded-b-lg bg-gradient-to-t from-green-500/[0.05] to-transparent" />
-        <div className="pointer-events-none absolute inset-0 rounded-lg border-2 border-green-500/30" />
       </Card>
     </motion.div>
   );

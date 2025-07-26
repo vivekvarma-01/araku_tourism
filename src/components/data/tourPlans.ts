@@ -9,7 +9,7 @@ export interface TourPlan {
   id: number;
   title: string;
   duration: string;
-  price: { [vehicleType: string]: string }; // e.g., { "4-Seater": "₹3500", "8-Seater": "₹4500" }
+  price: { [vehicleType: string]: string };
   image?: string;
   highlights: string[];
   inclusions: string[];
@@ -64,7 +64,7 @@ export const tourPlans: TourPlan[] = [
       { name: "Lambasingi", price: "₹8000" }
     ],
     itinerary: [
-      "Day 1: Padmapuram Botanical Garden, Chocolate Factory 🍫, Tribal Museum, Coffee Museum & Coffee Plantation, Chaprai Waterfalls, Araku Pine Forest 🌲",
+      "Day 1: Padmapuram Botanical Garden, Chocolate Factory , Tribal Museum, Coffee Museum & Coffee Plantation, Chaprai Waterfalls, Araku Pine Forest ",
       "Day 2: Galikonda View Point, Thatiguda Waterfalls, Borra Caves, Katiki Waterfalls (Jeeps – ₹300/person)"
     ],
     notes: [
@@ -120,4 +120,4 @@ export const tourPlans: TourPlan[] = [
     ],
     notes: ["Add sunrise cost as desired"]
   }
-]
+];
