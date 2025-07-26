@@ -6,12 +6,14 @@ import AccordionLast from "@/components/ui/accordion-last";
 import AnimatedPinDemo from "@/components/AnimatedPinDemo";
 import { ImagesSliderDemo } from "@/components/landingpage";
 import Footer4Col from "@/components/footer2";
+import { ModeToggle } from "@/components/toggle";
 
 
 
 export default function Home() {
   return (
     <div>
+      <ModeToggle />
       <ImagesSliderDemo />
       <AnimatedTestimonialsDemo />
       <InfiniteMovingCardsDemo />
