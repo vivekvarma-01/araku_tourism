@@ -143,25 +143,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          {/* Buttons */}
-          <div className="flex gap-4 pt-12 md:pt-0">
-            <button
-              onClick={handlePrev}
-              className="group/button flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-zinc-800 border border-green-200 dark:border-zinc-700 shadow transition duration-200 hover:bg-green-50 dark:hover:bg-green-950 focus-visible:ring-2 focus-visible:ring-green-500"
-              aria-label="Previous Testimonial"
-              type="button"
-            >
-              <IconArrowLeft className="h-5 w-5 text-zinc-700 dark:text-zinc-100 group-hover/button:text-green-700 dark:group-hover/button:text-green-300 transition-transform duration-300" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="group/button flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-zinc-800 border border-green-200 dark:border-zinc-700 shadow transition duration-200 hover:bg-green-50 dark:hover:bg-green-950 focus-visible:ring-2 focus-visible:ring-green-500"
-              aria-label="Next Testimonial"
-              type="button"
-            >
-              <IconArrowRight className="h-5 w-5 text-zinc-700 dark:text-zinc-100 group-hover/button:text-green-700 dark:group-hover/button:text-green-300 transition-transform duration-300" />
-            </button>
-          </div>
+          
         </div>
       </div>
     </div>

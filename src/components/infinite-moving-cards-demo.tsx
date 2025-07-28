@@ -68,7 +68,7 @@ const testimonials = [
 
 export default function InfiniteMovingCardsDemo() {
   return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-zinc-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-[40rem]  flex flex-col antialiased bg-white dark:bg-zinc-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <motion.h1
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

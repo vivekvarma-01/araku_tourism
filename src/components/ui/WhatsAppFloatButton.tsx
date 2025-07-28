@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function WhatsAppFloatButton() {
   return (
     <a
@@ -10,11 +12,13 @@ export function WhatsAppFloatButton() {
         borderRadius: "50%"
       }}
     >
-      <img
+      <Image
         src="/whatsapp.svg"
         alt="WhatsApp"
         className="w-full h-full object-contain"
         style={{ borderRadius: "50%" }}
+        height={300}
+        width={300}
       />
     </a>
   );
