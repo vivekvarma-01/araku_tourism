@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export default function SocialIcons() {
@@ -10,7 +11,9 @@ export default function SocialIcons() {
         rel="noopener noreferrer"
         aria-label="Facebook"
       >
-        <img
+        <Image
+          height={300}
+          width={300}
           src="/facebook.png"
           alt="Facebook"
           className="h-7 w-7 object-contain"
@@ -24,7 +27,9 @@ export default function SocialIcons() {
         rel="noopener noreferrer"
         aria-label="Instagram"
       >
-        <img
+        <Image
+        height={300}
+        width={300}
           src="/instagram.png"
           alt="Instagram"
           className="h-7 w-7 object-contain"
@@ -38,7 +43,9 @@ export default function SocialIcons() {
         rel="noopener noreferrer"
         aria-label="YouTube"
       >
-        <img
+        <Image
+        height={300}
+        width={300}
           src="/youtube.png"
           alt="YouTube"
           className="h-7 w-7 object-contain"

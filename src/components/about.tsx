@@ -1,8 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Globe } from "lucide-react";
 import React from "react";
-
 
 
 export default function AboutArakuTravels() {
@@ -33,7 +31,7 @@ export default function AboutArakuTravels() {
         </motion.h1>
         <motion.p
           className="text-lg text-zinc-700 dark:text-zinc-200 mb-6 text-center"
-          // @ts-expect-error
+          // @ts-expect-error : unknown error
           variants={fadeInUp}
           custom={1}
           initial="hidden"
@@ -46,7 +44,7 @@ export default function AboutArakuTravels() {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Who We Are & Journey */}
           <motion.div
-           // @ts-expect-error
+           // @ts-expect-error : unknown error
             variants={fadeInUp}
             custom={2}
             initial="hidden"
@@ -79,7 +77,7 @@ export default function AboutArakuTravels() {
 
           {/* What We Offer & Why Choose */}
           <motion.div
-           // @ts-expect-error
+           // @ts-expect-error : unknown error
             variants={fadeInUp}
             custom={3}
             initial="hidden"
