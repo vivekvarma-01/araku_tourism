@@ -76,7 +76,7 @@ export const tourPlans: TourPlan[] = [
     id: 3,
     title: "3-Day Araku + Sunrise Combo Tour",
     duration: "3 Days / 2 Nights",
-    price: { "4-Seater": "₹9000", "8-Seater": "₹11000" },
+    price: { "4-Seater": "₹12000", "8-Seater": "₹15000" },
     image: "/pack3.jpg",
     highlights: [
       "Includes full sunrise experience",
@@ -100,7 +100,7 @@ export const tourPlans: TourPlan[] = [
     id: 4,
     title: "4-Day Araku Full Tour + Sunrise Experience",
     duration: "4 Days / 3 Nights",
-    price: { "4-Seater": "₹12000", "8-Seater": "₹14000" },
+    price: { "4-Seater": "₹15000", "8-Seater": "₹20000" },
     image: "/pack4.jpg",
     highlights: [
       "Ultimate nature, adventure & culture",

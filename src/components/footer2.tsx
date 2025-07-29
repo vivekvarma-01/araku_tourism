@@ -1,7 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { WhatsAppFloatButton } from "./ui/WhatsAppFloatButton";
-// Import your social icons component
-import SocialIcons from "./socialmedia"; // <-- adjust the path if it's in another folder
+import SocialIcons from "./socialmedia";
 
 const data = {
   contact: {
@@ -12,16 +11,9 @@ const data = {
   company: {
     name: "Araku Travels",
     description:
-      "Araku Travels is your trusted partner for unforgettable journeys to Araku Valley and beyond. We specialize in curated travel experiences, scenic getaways, and local adventures—blending comfort, culture, and natural beauty to make every trip memorable.",
+      "Araku Travels is your trusted partner for unforgettable journeys to Araku Valley and beyond. We specialize in curated travel experiences, scenic getaways, and local adventures, comfort, culture, and natural beauty to make every trip memorable. With our dedicated local team, you can expect seamless service and authentic insights at every step of your journey.",
   },
 };
-
-const aboutLinks = [
-  { text: "Heritage" },
-  { text: "Hospitality" },
-  { text: "Adventure" },
-  { text: "Serenity" },
-];
 
 const serviceLinks = [
   { text: "Tour Packages" },
@@ -38,11 +30,11 @@ const contactInfo = [
 
 export default function Footer4Col() {
   return (
-    <footer className="w-full place-self-end bg-white text-black dark:bg-zinc-950 dark:text-white transition-colors duration-300">
+    <footer className="w-full bg-white text-black dark:bg-zinc-950 dark:text-white transition-colors duration-300">
       <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-6">
-          {/* Company Info (Spans 2 columns) */}
-          <div className="lg:col-span-2 text-center sm:text-left">
+          {/* Company Info (Half width) */}
+          <div className="lg:col-span-3 text-center sm:text-left">
             <h2 className="text-3xl font-extrabold text-green-700 dark:text-green-400">
               {data.company.name}
             </h2>
@@ -51,31 +43,21 @@ export default function Footer4Col() {
             </p>
           </div>
 
-          {/* About Us */}
-          <div className="lg:col-span-1 text-center sm:text-left">
-            <h3 className="text-lg font-bold text-green-700 dark:text-green-400">About Us</h3>
-            <ul className="mt-6 space-y-3 text-sm">
-              {aboutLinks.map(({ text }) => (
-                <li key={text} className="text-zinc-600 dark:text-zinc-400 font-normal">
-                  {text}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div className="lg:col-span-1 text-center sm:text-left">
-            <h3 className="text-lg font-bold text-green-700 dark:text-green-400">Our Services</h3>
-            <ul className="mt-6 space-y-3 text-sm">
+          {/* Our Services (Right quarter) */}
+          <div className="lg:col-span-1 text-center sm:text-left flex flex-col">
+            <h3 className="text-lg font-bold text-green-700 dark:text-green-400 relative pb-2">
+              Our Services
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm">
               {serviceLinks.map(({ text }) => (
-                <li key={text} className="text-zinc-600 dark:text-zinc-400 font-normal">
+                <li key={text} className="text-zinc-600 dark:text-zinc-300 font-normal">
                   {text}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact (Right quarter) */}
           <div className="lg:col-span-2 text-center sm:text-left">
             <h3 className="text-lg font-bold text-green-700 dark:text-green-400">Contact Us</h3>
             <ul className="mt-6 space-y-3 text-sm">
@@ -94,7 +76,6 @@ export default function Footer4Col() {
                 </li>
               ))}
             </ul>
-            {/* --- Social Icons Row --- */}
             <div className="flex justify-center sm:justify-start mt-4">
               <SocialIcons />
             </div>

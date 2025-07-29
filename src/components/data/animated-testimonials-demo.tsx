@@ -30,7 +30,7 @@ export function AnimatedTestimonialsDemo() {
       quote:
         "A scenic natural spot where cool waters flow over rocks, making it a great picnic and nature relaxation area.",
       name: "Chaprai Waterfalls",
-      src: "/Chaprai Waterfalls.jpg",
+      src: "/chaprai Waterfalls.jpg",
     },
     {
       quote:

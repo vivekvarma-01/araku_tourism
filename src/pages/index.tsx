@@ -7,6 +7,7 @@ import AnimatedPinDemo from "@/components/AnimatedPinDemo";
 import { ImagesSliderDemo } from "@/components/landingpage";
 import Footer4Col from "@/components/footer2";
 import { Navbar } from "@/components/navbar";
+import AboutArakuTravels from "@/components/about";
 
 
 
@@ -20,6 +21,7 @@ export default function Home() {
       <TourPlans />
       <AnimatedPinDemo />
       <AccordionLast />
+      <AboutArakuTravels />
       <Footer4Col />
     </div>
   );
