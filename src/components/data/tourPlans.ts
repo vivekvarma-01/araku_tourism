@@ -73,51 +73,51 @@ export const tourPlans: TourPlan[] = [
     ]
   },
   {
-    id: 3,
-    title: "3-Day Araku + Sunrise Combo Tour",
-    duration: "3 Days / 2 Nights",
-    price: { "4-Seater": "₹12000", "8-Seater": "₹15000" },
-    image: "/pack3.jpg",
-    highlights: [
-      "Includes full sunrise experience",
-      "Cultural & Adventure Hotspots"
-    ],
-    inclusions: ["Parking, tolls & driver charges"],
-    hasSunrise: true,
-    sunriseOptions: [
-      { name: "Madagada", price: "₹2500" },
-      { name: "Vanajangi", price: "₹6000" },
-      { name: "Lambasingi", price: "₹8000" }
-    ],
-    itinerary: [
-      "Day 1: Padmapuram Botanical Garden, Chocolate Factory, Tribal Museum, Coffee Museum & Coffee Plantation, Chaprai Waterfalls, Araku Pine Forest",
-      "Day 2: Galikonda View Point, Thatiguda Waterfalls, Borra Caves, Katiki Waterfalls (Jeeps – ₹300/person)",
-      "Day 3: Early Morning Sunrise (Pick: Madagada / Vanajangi / Lambasingi)"
-    ],
-    notes: ["Add sunrise cost separately"]
+  id: 3,
+  title: "3-Day Araku + Vanajangi Sunrise Tour",
+  duration: "3 Days / 2 Nights",
+  price: { "4-Seater": "₹10000", "8-Seater": "₹12000" },
+  image: "/pack3.jpg",
+  highlights: [
+    "Breathtaking Vanajangi Sunrise Included",
+    "Nature, Culture & Adventure Experience"
+  ],
+  inclusions: ["Parking, tolls & driver charges"],
+  hasSunrise: true,
+  sunriseOptions: [
+    { name: "Madagada", price: "₹2500" },
+    { name: "Lambasingi", price: "₹8000" }
+  ],
+  itinerary: [
+    "Day 1: Padmapuram Botanical Garden, Chocolate Factory, Tribal Museum, Coffee Museum & Coffee Plantation, Chaprai Waterfalls, Araku Pine Forest",
+    "Day 2: Galikonda View Point, Thatiguda Waterfalls, Borra Caves, Katiki Waterfalls (Jeeps – ₹300/person)",
+    "Day 3: Early Morning Vanajangi Sunrise Experience (Optional switch to Madagada or Lambasingi at extra cost)"
+  ],
+  notes: ["Sunrise cost is additional unless Vanajangi is selected"]
   },
+
   {
-    id: 4,
-    title: "4-Day Araku Full Tour + Sunrise Experience",
-    duration: "4 Days / 3 Nights",
-    price: { "4-Seater": "₹15000", "8-Seater": "₹20000" },
-    image: "/pack4.jpg",
-    highlights: [
-      "Ultimate nature, adventure & culture",
-      "Multiple sunrise & waterfall experiences"
-    ],
-    inclusions: ["Parking, tolls & driver charges"],
-    hasSunrise: true,
-    sunriseOptions: [
-      { name: "Madagada (Day 2)", price: "₹2500" },
-      { name: "Vanajangi (Day 3)", price: "₹6000" }
-    ],
-    itinerary: [
-      "Day 1: Borra Caves, Coffee Plantation, Galikonda View Point, Katiki Waterfalls, Thatiguda Waterfalls (Night Stay in Araku Valley)",
-      "Day 2: Early Morning Madagada Sunrise (add-on), Chaprai Waterfalls, Ranajilda Waterfalls, Padmapuram Botanical Garden, Chocolate Factory, Tribal Museum, Coffee Museum (Night Stay in Araku Valley)",
-      "Day 3: Early Morning Vanajangi Sunrise (add-on), Kothapalli Waterfalls (Night Stay in Lambasingi)",
-      "Day 4: Explore Lambasingi"
-    ],
-    notes: ["Add sunrise cost as desired"]
-  }
+  id: 4,
+  title: "4-Day Araku & Lambasingi Adventure + Sunrise Tour",
+  duration: "4 Days / 3 Nights",
+  price: { "4-Seater": "₹15,000", "8-Seater": "₹20,000" },
+  image: "/pack4.jpg",
+  highlights: [
+    "Complete Araku Valley Experience",
+    "Vanajangi Sunrise + Multiple Waterfalls",
+    "Nature, Culture & Scenic Landscapes"
+  ],
+  inclusions: ["Parking, tolls & driver charges"],
+  hasSunrise: true,
+
+  itinerary: [
+    "Day 1: Borra Caves, Coffee Plantation, Galikonda View Point, Katiki Waterfalls, Thatiguda Waterfalls (Night Stay in Araku Valley)",
+    "Day 2: Chaprai Waterfalls, Ranajilda Waterfalls, Padmapuram Botanical Garden, Chocolate Factory, Tribal Museum, Coffee Museum (Night Stay in Araku Valley)",
+    "Day 3: Early Morning Vanajangi Sunrise, Kothapalli Waterfalls (Night Stay in Lambasingi)",
+    "Day 4: Morning Sunrise exploration in Lambasingi – misty valleys, forest views, and return journey"
+  ],
+
+  notes: ["Vanajangi Sunrise included. Lambasingi Sunrise included."]
+}
+
 ];
