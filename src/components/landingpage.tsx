@@ -6,7 +6,7 @@ import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 
 export function ImagesSliderDemo() {
-   const words = `The Araku escape you need\ncoffee caves clouds`;
+   const words = `From Misty Hills to Hidden Caves\nAraku Awaits`;
   const images = [
     "/vana.jpg",
   ];

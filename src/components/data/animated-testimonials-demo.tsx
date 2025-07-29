@@ -4,33 +4,81 @@ export function AnimatedTestimonialsDemo() {
   const testimonials = [
     {
       quote:
-        "Nestled amidst the Eastern Ghats, this is a picturesque spot with cascading waters surrounded by lush greenery. Perfect for nature lovers and photographers.",
-      name: "Katiki Waterfalls",
-      src: "https://i.pinimg.com/736x/43/85/a7/4385a78b6fa30cbdaaf231e9dc3b0909.jpg",
+        "Known for its tribal culture and natural beauty, this botanical garden features exotic flora and a toy train ride.",
+      name: "Padmapuram Botanical Garden",
+      src: "/Padmapuram Botanical Garden.jpg",
     },
     {
       quote:
-        "Known for its tribal culture and stunning natural landscapes, this garden offers a serene atmosphere with exotic plants and vibrant tribal art.",
-      name: "Padmapuram Botanical Gardens",
-      src: "https://i.pinimg.com/736x/9f/52/da/9f52da094f3aff6af4d05b1ef311ce36.jpg",
+        "A fun and educational place where visitors can see how chocolate is made and taste freshly prepared treats.",
+      name: "Chocolate Factory",
+      src: "/Chocolate Factory.jpg",
     },
     {
       quote:
-        "An engineering marvel and a must-visit, this is one of the deepest and longest tunnels in India, offering a thrilling train journey through scenic mountain terrain.",
-      name: "Borra Caves & Tunnel",
-      src: "https://i.pinimg.com/736x/fe/83/42/fe83424ec96595b3c0836bacbbd4c478.jpg",
+        "Showcasing the lifestyle and heritage of the tribal communities in Araku Valley, this museum is rich in artifacts and cultural history.",
+      name: "Tribal Museum",
+      src: "/Tribal Museum.jpg",
     },
     {
       quote:
-        "A perfect viewpoint offering breathtaking views of the valley. The sunrise and sunset from here are truly mesmerizing.",
+        "Offers insights into coffee production, history, and varieties, along with a relaxing café and scenic plantation surroundings.",
+      name: "Coffee Museum & Coffee Plantation",
+      src: "/Coffee Museum & Coffee Plantation.jpg",
+    },
+    {
+      quote:
+        "A scenic natural spot where cool waters flow over rocks, making it a great picnic and nature relaxation area.",
+      name: "Chaprai Waterfalls",
+      src: "/Chaprai Waterfalls.jpg",
+    },
+    {
+      quote:
+        "A dense forest filled with towering pine trees, ideal for a peaceful walk or nature photography.",
+      name: "Araku Pine Forest",
+      src: "/Araku Pine Forest.jpg",
+    },
+    {
+      quote:
+        "One of the highest points in the region, offering panoramic views of the lush Araku valley and hills beyond.",
       name: "Galikonda View Point",
-      src: "https://i.pinimg.com/736x/10/a5/e7/10a5e7de2a05b646c18ab847401f6406.jpg",
+      src: "/Galikonda View Point.jpg",
     },
     {
       quote:
-        "A beautiful hill station surrounded by coffee plantations and tribal villages. The cool climate and scenic beauty make it a peaceful getaway.",
-      name: "Araku Valley Town",
-      src: "https://i.pinimg.com/736x/a1/55/9f/a1559f54a7844ba63a87adf5b90a22a4.jpg",
+        "A beautiful waterfall surrounded by thick greenery, popular for its serene and untouched natural ambiance.",
+      name: "Thatiguda Waterfalls",
+      src: "/Thatiguda Waterfalls.jpg",
+    },
+    {
+      quote:
+        "A natural wonder formed by limestone, featuring massive stalactites and stalagmites with a railway tunnel nearby.",
+      name: "Borra Caves",
+      src: "/Borra Caves.jpg",
+    },
+    {
+      quote:
+        "A picturesque waterfall accessible by a small trek, known for its refreshing waters and jungle surroundings.",
+      name: "Katiki Waterfalls",
+      src: "/Katiki Waterfalls.jpg",
+    },
+    {
+      quote:
+        "A peaceful village in the hills offering panoramic sunrise views and a calm rural experience.",
+      name: "Madagada",
+      src: "/Madagada.jpg",
+    },
+    {
+      quote:
+        "Famous for its early morning sunrises and foggy hills, Vanajangi offers a breathtaking cloud bed view.",
+      name: "Vanajangi",
+      src: "/Vanajangi.jpg",
+    },
+    {
+      quote:
+        "Often referred to as the Kashmir of Andhra Pradesh, this cool hill station is known for its misty mornings and apple orchards.",
+      name: "Lambasingi",
+      src: "/Lambasingi.jpg",
     },
   ];
 

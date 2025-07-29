@@ -1,10 +1,12 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { WhatsAppFloatButton } from "./ui/WhatsAppFloatButton";
+// Import your social icons component
+import SocialIcons from "./socialmedia"; // <-- adjust the path if it's in another folder
 
 const data = {
   contact: {
-    email: "arakutours.com",
-    phone: "+91 987654321",
+    email: "arakutravels@gmail.com",
+    phone: "+91 9494781499",
     address: "Araku, Andhra Pradesh , India",
   },
   company: {
@@ -15,10 +17,10 @@ const data = {
 };
 
 const aboutLinks = [
-  { text: "About Araku Travels" },
-  { text: "Our Journey" },
-  { text: "Meet Our Guides" },
-  { text: "Careers at Araku" },
+  { text: "Heritage" },
+  { text: "Hospitality" },
+  { text: "Adventure" },
+  { text: "Serenity" },
 ];
 
 const serviceLinks = [
@@ -36,7 +38,7 @@ const contactInfo = [
 
 export default function Footer4Col() {
   return (
-    <footer className="w-full  place-self-end  bg-white text-black dark:bg-zinc-950 dark:text-white transition-colors duration-300">
+    <footer className="w-full place-self-end bg-white text-black dark:bg-zinc-950 dark:text-white transition-colors duration-300">
       <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-6">
           {/* Company Info (Spans 2 columns) */}
@@ -92,6 +94,10 @@ export default function Footer4Col() {
                 </li>
               ))}
             </ul>
+            {/* --- Social Icons Row --- */}
+            <div className="flex justify-center sm:justify-start mt-4">
+              <SocialIcons />
+            </div>
           </div>
         </div>
 

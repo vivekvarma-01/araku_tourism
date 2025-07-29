@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { ModeToggle } from "./ui/toggle";
 
+// Add Home back into the navigation
 const navigationItems = [
   { name: "Home", href: "#home" },
   { name: "Plans", href: "#plans" },
@@ -34,7 +35,7 @@ export function Navbar() {
         shadow-lg
       `}
     >
-      <div className="flex items-center justify-between h-12 px-4 sm:px-6 lg:px-8">
+      <div className="relative flex items-center justify-between h-12 px-4 sm:px-6 lg:px-8">
         {/* Left: Logo */}
         <div>
           <h1
@@ -43,20 +44,21 @@ export function Navbar() {
               text-green-500 select-none
             `}
           >
-            Araku
+            Araku Travels
           </h1>
         </div>
-        {/* Center: Navigation */}
-        <div className="flex-1 flex justify-center">
-          <div className="hidden md:flex items-center space-x-8">
+
+        {/* Center: Links - Absolutely centered in the box */}
+        <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+          <div className="hidden md:flex items-center space-x-8 pointer-events-auto">
             {navigationItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 className="
-                  text-black dark:text-white/90 hover:text-green-400 
-                  px-3 py-2 text-base font-medium 
-                  transition-all duration-150 
+                  text-black dark:text-white/90 hover:text-green-400
+                  px-3 py-2 text-base font-medium
+                  transition-all duration-150
                   hover:bg-zinc-100 dark:hover:bg-zinc-800 active:scale-95 rounded-md
                 "
               >
@@ -65,6 +67,7 @@ export function Navbar() {
             ))}
           </div>
         </div>
+
         {/* Right: Toggle and Mobile Button */}
         <div className="flex items-center space-x-2">
           <ModeToggle />
@@ -104,8 +107,8 @@ export function Navbar() {
                       className="
                         text-black/80 dark:text-white/80
                         hover:text-green-700 dark:hover:text-green-400
-                        px-4 py-3 text-lg font-semibold 
-                        transition-all duration-200 
+                        px-4 py-3 text-lg font-semibold
+                        transition-all duration-200
                         hover:bg-white/30 dark:hover:bg-zinc-800/40
                         rounded-md
                       "

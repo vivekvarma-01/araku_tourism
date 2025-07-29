@@ -34,14 +34,14 @@ const accordionData: AccordionItem[] = [
 
   },
   {
-     question: 'Is accommodation included in the tour packages?',
-     answer: 'Accommodation is not included by default, but it can be arranged on request based on your preferences and budget. We offer options ranging from budget stays to premium resorts.',
-
-  },
-  {
+     
      question: 'Are meals included in the tour packages?',
      answer: 'Meals are not included in the tour packages, but we can take you to some of the best local spots to enjoy delicious and authentic meals during your trip.',
 
+  },
+  {
+     question: 'Is accommodation included in the tour packages?',
+     answer: 'Accommodation is not included by default, but it can be arranged on request based on your preferences and budget. We offer options ranging from budget stays to premium resorts.',
   },
 ];
 

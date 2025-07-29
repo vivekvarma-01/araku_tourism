@@ -26,7 +26,7 @@ export const tourPlans: TourPlan[] = [
     title: "1-Day Araku Quick Tour",
     duration: "1 Day",
     price: { "4-Seater": "₹3500", "8-Seater": "₹4500" },
-    image: "https://i.pinimg.com/1200x/df/b0/e6/dfb0e669d0ae8f8d437387d6e98f66e3.jpg",
+    image: "/pack1.jpg",
     highlights: [
       "Padmapuram Botanical Garden",
       "Tribal Museum",
@@ -50,7 +50,7 @@ export const tourPlans: TourPlan[] = [
     title: "2-Day Araku Explorer Tour (Optional Sunrise Add-on)",
     duration: "2 Days / 1 Night",
     price: { "4-Seater": "₹6000", "8-Seater": "₹7000" },
-    image: "https://i.pinimg.com/736x/d9/41/ab/d941abb5519fbbec5bc2502387f9de56.jpg",
+    image: "/pack2.jpg",
     highlights: [
       "Chocolate Factory Visit",
       "Waterfall Adventures",
@@ -77,7 +77,7 @@ export const tourPlans: TourPlan[] = [
     title: "3-Day Araku + Sunrise Combo Tour",
     duration: "3 Days / 2 Nights",
     price: { "4-Seater": "₹9000", "8-Seater": "₹11000" },
-    image: "https://i.pinimg.com/1200x/48/39/d3/4839d3fea4f77f32fc3771bd1c6bf948.jpg",
+    image: "/pack3.jpg",
     highlights: [
       "Includes full sunrise experience",
       "Cultural & Adventure Hotspots"
@@ -101,7 +101,7 @@ export const tourPlans: TourPlan[] = [
     title: "4-Day Araku Full Tour + Sunrise Experience",
     duration: "4 Days / 3 Nights",
     price: { "4-Seater": "₹12000", "8-Seater": "₹14000" },
-    image: "https://i.pinimg.com/736x/5d/8e/0f/5d8e0f643e5714d12d2c03698f1aa20f.jpg",
+    image: "/pack4.jpg",
     highlights: [
       "Ultimate nature, adventure & culture",
       "Multiple sunrise & waterfall experiences"
