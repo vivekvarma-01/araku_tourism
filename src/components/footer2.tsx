@@ -4,7 +4,7 @@ import SocialIcons from "./socialmedia";
 
 const data = {
   contact: {
-    email: "arakutravels@gmail.com",
+    email: "kiran@arakutravels.com",
     phone: "+91 9494781499",
     address: "Araku, Andhra Pradesh , India",
   },
