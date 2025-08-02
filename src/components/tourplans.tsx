@@ -57,12 +57,14 @@ export function TourCard({
       )}
       style={{
         filter: isInactive ? "blur(2.5px) brightness(90%)" : "none",
-        transition: "filter 0.35s, transform 0.35s, box-shadow 0.25s"
+        transition: "filter 0.35s, transform 0.35s, box-shadow 0.25s",
       }}
     >
-      <Card className={cn(
-        "relative h-full w-full bg-white dark:bg-zinc-900 border border-green-300 dark:border-zinc-700 text-left hover:shadow-lg overflow-hidden shadow-md"
-      )}>
+      <Card
+        className={cn(
+          "relative h-full w-full bg-white dark:bg-zinc-900 border border-green-300 dark:border-zinc-700 text-left hover:shadow-lg overflow-hidden shadow-md"
+        )}
+      >
         <div className="relative h-32 overflow-hidden">
           <Image
             src={plan.image || "/placeholder.svg"}
@@ -83,26 +85,34 @@ export function TourCard({
         </CardHeader>
         <CardContent className="space-y-2 pb-3 px-3">
           <div>
-            <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">Prices:</h4>
+            <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">
+              Prices:
+            </h4>
             <ul className="space-y-1 text-xs text-black dark:text-zinc-200">
               <li>🚙 4-Seater: {plan.price["4-Seater"]}</li>
               <li>🚐 8-Seater: {plan.price["8-Seater"]}</li>
             </ul>
           </div>
 
-          {plan.hasSunrise && plan.sunriseOptions &&
+          {plan.hasSunrise && plan.sunriseOptions && (
             <div>
-              <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">Sunrise Options (add-on):</h4>
+              <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">
+                Sunrise Options (add-on):
+              </h4>
               <ul className="space-y-1 text-xs text-black dark:text-zinc-200">
                 {plan.sunriseOptions.map((opt, idx) => (
-                  <li key={idx}>☀ {opt.name} – {opt.price}</li>
+                  <li key={idx}>
+                    ☀ {opt.name} – {opt.price}
+                  </li>
                 ))}
               </ul>
             </div>
-          }
+          )}
 
           <div>
-            <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">Itinerary:</h4>
+            <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">
+              Itinerary:
+            </h4>
             <ul className="space-y-1 text-xs text-black dark:text-zinc-200">
               {plan.itinerary.map((item, idx) => (
                 <li key={idx}>{item}</li>
@@ -113,7 +123,9 @@ export function TourCard({
           {/* ---- Must Try Section BELOW Itinerary ---- */}
           {plan.mustTry && (
             <div>
-              <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">Must Try:</h4>
+              <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">
+                Must Try:
+              </h4>
               <ul className="space-y-1 text-xs text-black dark:text-zinc-200">
                 {plan.mustTry.map((item, idx) => (
                   <li key={idx}>⭐ {item}</li>
@@ -123,7 +135,9 @@ export function TourCard({
           )}
 
           <div>
-            <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">Includes:</h4>
+            <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">
+              Includes:
+            </h4>
             <ul className="space-y-1 text-xs text-black dark:text-zinc-200">
               {plan.inclusions.map((inc, idx) => (
                 <li key={idx}>✅ {inc}</li>
@@ -133,24 +147,32 @@ export function TourCard({
           {plan.notes && plan.notes.length > 0 && (
             <div>
               {plan.notes.map((note, idx) => (
-                <p key={idx} className="text-xs text-black dark:text-zinc-200">{note}</p>
+                <p key={idx} className="text-xs text-black dark:text-zinc-200">
+                  {note}
+                </p>
               ))}
             </div>
           )}
         </CardContent>
         <CardFooter className="pt-0 mt-auto p-3">
-          <Button className="w-full bg-green-600 hover:bg-green-700 text-white dark:text-zinc-100">
-            Book Package
-          </Button>
+          <a
+            href={`https://wa.me/919494781499?text=${encodeURIComponent(
+              `Hi, I’m interested in booking the ${plan.title} package.`
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full"
+          >
+            <Button className="w-full bg-green-600 hover:bg-green-700 text-white dark:text-zinc-100">
+              Book Package
+            </Button>
+          </a>
         </CardFooter>
       </Card>
     </motion.div>
   );
 }
 
-// ========================
-// Main TourPlans Component
-// ========================
 
 export default function TourPlans() {
   const [mounted, setMounted] = useState(false);
@@ -184,12 +206,13 @@ export default function TourPlans() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="max-w-2xl pt-2 text-base text-black dark:text-zinc-300"
             >
-              Flexible pricing for 4-seater & 8-seater cabs. Add optional sunrise experiences for the best of Araku!
+              Flexible pricing for 4-seater & 8-seater cabs. Add optional
+              sunrise experiences for the best of Araku!
             </motion.p>
           </div>
           {/* Tour Cards */}
           <div className="flex flex-wrap justify-center gap-4 lg:gap-6 mb-10">
-            {tourPlans.map((plan , index) => (
+            {tourPlans.map((plan, index) => (
               <TourCard
                 key={plan.id}
                 plan={plan}
