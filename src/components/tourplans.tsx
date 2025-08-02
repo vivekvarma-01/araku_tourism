@@ -12,7 +12,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import React from "react";
-import { tourPlans, TourPlan } from "./data/tourPlans"; // Make sure TourPlan is exported
+import { tourPlans, TourPlan } from "./data/tourPlans";
 
 function cn(...classes: (string | undefined | null | false)[]) {
   return classes.filter(Boolean).join(" ");
@@ -89,6 +89,7 @@ export function TourCard({
               <li>🚐 8-Seater: {plan.price["8-Seater"]}</li>
             </ul>
           </div>
+
           {plan.hasSunrise && plan.sunriseOptions &&
             <div>
               <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">Sunrise Options (add-on):</h4>
@@ -99,6 +100,7 @@ export function TourCard({
               </ul>
             </div>
           }
+
           <div>
             <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">Itinerary:</h4>
             <ul className="space-y-1 text-xs text-black dark:text-zinc-200">
@@ -107,6 +109,19 @@ export function TourCard({
               ))}
             </ul>
           </div>
+
+          {/* ---- Must Try Section BELOW Itinerary ---- */}
+          {plan.mustTry && (
+            <div>
+              <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">Must Try:</h4>
+              <ul className="space-y-1 text-xs text-black dark:text-zinc-200">
+                {plan.mustTry.map((item, idx) => (
+                  <li key={idx}>⭐ {item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <div>
             <h4 className="font-semibold mb-1.5 text-xs text-black dark:text-zinc-200">Includes:</h4>
             <ul className="space-y-1 text-xs text-black dark:text-zinc-200">

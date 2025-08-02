@@ -80,6 +80,25 @@ export function AnimatedTestimonialsDemo() {
       name: "Lambasingi",
       src: "/Lambasingi.jpg",
     },
+    {
+  quote:
+    "A vibrant tribal dance of the Araku Valley, Dhimsa celebrates unity and joy through rhythmic steps and colorful traditional attire.",
+  name: "Dhimsa Dance",
+  src: "/Dhimsa Dance.jpg",
+},
+{
+  quote:
+    "A smoky delight from tribal kitchens, Bamboo Chicken is marinated meat slow-cooked inside bamboo over firewood—earthy, tender, unforgettable.",
+  name: "Bamboo Chicken",
+  src: "/Bamboo Chicken.jpg",
+},
+{
+  quote:
+    "Fragrant rice and spiced meat steam together inside bamboo, creating Araku’s signature Bamboo Biryani—flavor sealed in tradition.",
+  name: "Bamboo Biryani",
+  src: "/Bamboo Biryani.jpg",
+},
+
   ];
 
   return <AnimatedTestimonials testimonials={testimonials} />;
