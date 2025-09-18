@@ -156,7 +156,7 @@ export function TourCard({
         </CardContent>
         <CardFooter className="pt-0 mt-auto p-3">
           <a
-            href={`https://wa.me/919494781499?text=${encodeURIComponent(
+            href={`https://wa.me/919550993844?text=${encodeURIComponent(
               `Hi, I’m interested in booking the ${plan.title} package.`
             )}`}
             target="_blank"
