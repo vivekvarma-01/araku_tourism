@@ -6,7 +6,7 @@ export default function SocialIcons() {
     <div className="flex space-x-6">
       {/* Facebook */}
       <a
-        href="https://www.facebook.com/share/1FK15wmfJM/"
+        href=""
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Facebook"
@@ -22,7 +22,7 @@ export default function SocialIcons() {
 
       {/* Instagram */}
       <a
-        href="https://www.instagram.com/araku.travels?igsh=MWNtcDJhYmxpbTF5aw=="
+        href=""
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Instagram"
@@ -38,7 +38,7 @@ export default function SocialIcons() {
 
       {/* YouTube */}
       <a
-        href="https://youtube.com/@araku.travels?si=N9vP6nzaglpPBc2k"
+        href=""
         target="_blank"
         rel="noopener noreferrer"
         aria-label="YouTube"
