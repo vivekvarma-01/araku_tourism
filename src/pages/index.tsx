@@ -1,4 +1,3 @@
-
 import TourPlans from "@/components/tourplans";
 import { AnimatedTestimonialsDemo } from "../components/data/animated-testimonials-demo";
 import InfiniteMovingCardsDemo from "@/components/infinite-moving-cards-demo";
@@ -10,30 +9,28 @@ import { Navbar } from "@/components/navbar";
 import AboutArakuTravels from "@/components/about";
 import Head from "next/head";
 
-
 export default function Home() {
   return (
     <>
-    <Head>
+      <Head>
         <title>Araku Travels | Explore Araku Valley’s Beauty & Culture</title>
         <meta
           name="description"
-          content="Discover the magic of Araku with customized travel packages. Enjoy coffee plantations, tribal culture, waterfalls, and scenic train rides."
+          content="Immerse yourself in the magic of Araku Valley. Araku Travels offers curated journeys with expert local guides, personalized itineraries, and comfortable, clean cabs."
         />
         <link rel="canonical" href="https://www.arakutravels.com/" />
-
       </Head>
-    <div>
-      <Navbar />
-      <ImagesSliderDemo />
-      <AnimatedTestimonialsDemo />
-      <InfiniteMovingCardsDemo />
-      <TourPlans />
-      <AnimatedPinDemo />
-      <AccordionLast />
-      <AboutArakuTravels />
-      <Footer4Col />
-    </div>
+      <div>
+        <Navbar />
+        <ImagesSliderDemo />
+        <AnimatedTestimonialsDemo />
+        <InfiniteMovingCardsDemo />
+        <TourPlans />
+        <AnimatedPinDemo />
+        <AccordionLast />
+        <AboutArakuTravels />
+        <Footer4Col />
+      </div>
     </>
   );
 }
