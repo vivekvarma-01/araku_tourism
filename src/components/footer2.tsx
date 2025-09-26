@@ -6,7 +6,7 @@ const data = {
   contact: {
     email: "vivekvarma2004@gmail.com",
     phone: "+91 9550993844",
-    address: "Araku, Andhra Pradesh , India",
+    address: "Hyderabad, Telangana, India",
   },
   company: {
     name: "Araku Travels",

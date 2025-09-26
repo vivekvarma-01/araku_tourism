@@ -21,7 +21,7 @@ const accordionData: AccordionItem[] = [
   {
     question: 'What is the best time to visit Araku Valley?',
     answer:
-      'The best time to visit Araku Valley is from October to March when the weather is pleasant, the valleys are lush, and the coffee plantations are in full bloom.',
+      '.The best time to visit Araku Valley is from October to March when the weather is pleasant, the valleys are lush, and the coffee plantations are in full bloom',
   },
   {
     question: 'How can I reach Araku??',
