@@ -1,4 +1,3 @@
-// pages/_document.tsx
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -27,6 +26,22 @@ export default function Document() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.arakutravels.com" />
+
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-MHS2M9QSD8"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-MHS2M9QSD8');
+            `,
+          }}
+        />
 
         {/* Favicon */}
         <link rel="icon" href="/logo.svg" />
