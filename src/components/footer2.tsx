@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { WhatsAppFloatButton } from "./ui/WhatsAppFloatButton";
 import SocialIcons from "./socialmedia";
+import { AnimatedTooltipPreview } from "./dev_info";
 
 const data = {
   contact: {
@@ -41,6 +42,10 @@ export default function Footer4Col() {
             <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
               {data.company.description}
             </p>
+            <div>
+              <AnimatedTooltipPreview />
+            </div>
+            
           </div>
 
           {/* Our Services (Right quarter) */}
