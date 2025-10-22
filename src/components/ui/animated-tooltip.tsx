@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { motion, useTransform, useSpring, AnimatePresence, useMotionValue } from "motion/react";
+import Image from "next/image";
 
 export const AnimatedTooltip = ({
   items,
@@ -20,10 +21,10 @@ export const AnimatedTooltip = ({
   const rotate = useSpring(useTransform(x, [-100, 100], [-15, 15]), springConfig);
   const translateX = useSpring(useTransform(x, [-100, 100], [-20, 20]), springConfig);
 
-  const handleMouseMove = (event: any) => {
-    const halfWidth = event.target.offsetWidth / 2;
-    x.set(event.nativeEvent.offsetX - halfWidth);
-  };
+  const handleMouseMove = (event: React.MouseEvent<HTMLImageElement>) => {
+  const halfWidth = event.currentTarget.offsetWidth / 2;
+  x.set(event.nativeEvent.offsetX - halfWidth);
+};
 
   return (
     <>
@@ -49,7 +50,7 @@ export const AnimatedTooltip = ({
             )}
           </AnimatePresence>
 
-          <img
+          <Image
             onMouseMove={handleMouseMove}
             src={item.image}
             alt={item.name}

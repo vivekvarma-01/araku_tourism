@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
@@ -27,12 +28,22 @@ export default function Document() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.arakutravels.com" />
 
-        {/* Google tag (gtag.js) */}
-        <script
-          async
+        {/* Favicon */}
+        <link rel="icon" href="/logo.svg" />
+      </Head>
+
+      <body className="antialiased">
+        <Main />
+        <NextScript />
+
+        {/* ✅ Google Analytics using next/script */}
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-MHS2M9QSD8"
-        ></script>
-        <script
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -42,13 +53,6 @@ export default function Document() {
             `,
           }}
         />
-
-        {/* Favicon */}
-        <link rel="icon" href="/logo.svg" />
-      </Head>
-      <body className="antialiased ">
-        <Main />
-        <NextScript />
       </body>
     </Html>
   );
